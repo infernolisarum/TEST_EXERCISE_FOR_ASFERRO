@@ -56,19 +56,22 @@ class TestGmailMainSteps(object):
             (By.XPATH, self.page.message_text_locator), text))
 
     def select_text_from_package_letters(self):
-        verified_letters = []
-        letters = self.page.get_all_letters()
-        for i in range(len(letters)):
-            if i > self.number_letters:
-                break
-            from_who = str(letters[i].find_element_by_xpath(self.page.from_who_address_locator).get_attribute("email"))
-            if self.mail_address in from_who:
-                verified_letters.append(letters[i])
-        for i in range(len(verified_letters)):
-            message_subject = str(verified_letters[i].find_element_by_xpath(self.page.message_subject_locator).text)
-            message_text = str(verified_letters[i].find_element_by_xpath(self.page.message_text_locator).text)
-            format_message_text = message_text.replace(" - \n", "")
-            self.dict_for_letters[message_subject] = format_message_text
+        try:
+            verified_letters = []
+            letters = self.page.get_all_letters()
+            for i in range(len(letters)):
+                if i > self.number_letters:
+                    break
+                from_who = str(letters[i].find_element_by_xpath(self.page.from_who_address_locator).get_attribute("email"))
+                if self.mail_address in from_who:
+                    verified_letters.append(letters[i])
+            for i in range(len(verified_letters)):
+                message_subject = str(verified_letters[i].find_element_by_xpath(self.page.message_subject_locator).text)
+                message_text = str(verified_letters[i].find_element_by_xpath(self.page.message_text_locator).text)
+                format_message_text = message_text.replace(" - \n", "")
+                self.dict_for_letters[message_subject] = format_message_text
+        except StaleElementReferenceException:
+            pass
 
     def send_result_letter_with_report(self):
         result_string = ""
@@ -79,11 +82,10 @@ class TestGmailMainSteps(object):
             result_string += (report_format + "\n")
         self.page.send_letter(self.mail_address, self.result_letter_subject_value, result_string)
         self.page.refresh_letters()
+        self.check_sending_letter(self.result_letter_subject_value, self.dict_for_letters.keys()[1])
 
     def delete_all_letters_except_last(self):
         try:
-            WebDriverWait(self.page.driver, 7).until(expected.text_to_be_present_in_element(
-                (By.XPATH, self.page.message_subject_locator), self.result_letter_subject_value))
             WebDriverWait(self.page.driver, 7).until(expected.element_to_be_clickable(
                 self.page.all_letters_checkbox_locator)).click()
             WebDriverWait(self.page.driver, 7).until(expected.element_to_be_clickable(
