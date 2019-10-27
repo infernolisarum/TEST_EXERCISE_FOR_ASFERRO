@@ -6,8 +6,12 @@ from PO.BasePage import BasePage
 
 
 class GmailPage(BasePage):
-    def init_page(self):
-        self.driver.get("https://mail.google.com/mail/?tab=wm&amp;ogbl")
+    message_subject_locator = ".//td/div/div/div/span/span[@class='bqe']"
+    message_text_locator = ".//td/div/div/span[@class='y2']"
+    from_who_address_locator = ".//td/div/span/span[@email]"
+    all_letters_checkbox_locator = (By.XPATH, "//div/div/div/span[@role='checkbox']")
+    any_letter_checkbox_locator = ".//tr/td/div[@role='checkbox']"
+    delete_letter_button_locator = (By.XPATH, ".//div/div/div[@role='button' and @data-tooltip='Delete']")
 
     def login(self, login, password):
         email_field_locator = (By.XPATH, "//input[@type='email']")
