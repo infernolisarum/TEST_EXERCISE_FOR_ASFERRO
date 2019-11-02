@@ -1,0 +1,4 @@
+selenium==3.141.0
+pytest==4.6.6
+webdriver-manager==2.2.0
+clipboard==0.0.4
