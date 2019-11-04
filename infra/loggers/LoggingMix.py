@@ -7,7 +7,7 @@ class LoggingMix():
         if name in ['critical', 'error', 'warning', 'info', 'debug']:
             if not hasattr(self.__class__, '_LoggingMix__logger'):
                 self.__class__.__logger = logging.getLogger(self.__class__.__module__)
-                self.__class__.__logger.setLevel(logging.INFO)
+                self.__class__.__logger.setLevel(logging.DEBUG)
                 handler = logging.FileHandler("gmail_tests.log")
                 formatter = logging.Formatter("%(levelname)s %(asctime)s %(funcName)s %(lineno)d %(message)s")
                 handler.setFormatter(formatter)

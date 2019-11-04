@@ -23,11 +23,8 @@ class GmailMainPage(BasePage):
     delete_letter_button_locator = (By.XPATH, ".//div/div/div[@role='button' and @data-tooltip='Delete']")
 
     def check_titile(self, title_name, timeout=15):
-        try:
-            WebDriverWait(self.driver, timeout).until(expected.title_contains(title_name))
-            self.info("'{0}' is present in the title.".format(title_name))
-        except Exception, e:
-            self.error("'{0}' isn't present in the title. error: '{1}'".format(title_name, e.message))
+        WebDriverWait(self.driver, timeout).until(expected.title_contains(title_name))
+        self.info("'{0}' is present in the title.".format(title_name))
 
     def send_letter(self, address, subject_message, text_massage):
         self.wait_for_element_visibility(self.write_new_letter_button_locator)\
@@ -62,7 +59,7 @@ class GmailMainPage(BasePage):
                 format_message_text = message_text.replace(" - \n", "")
                 result_dict[message_subject] = format_message_text
             except StaleElementReferenceException:
-                self.error("Catched and ignored: StaleElementReferenceException")
+                self.warning("Catched and ignored: StaleElementReferenceException")
                 pass
         self.info("get_text_from_letters completed successfully")
         return result_dict
@@ -76,7 +73,7 @@ class GmailMainPage(BasePage):
             self.wait_for_element_visibility(self.delete_letter_button_locator)\
                 .click()
         except StaleElementReferenceException:
-            self.error("Catched and ignored: StaleElementReferenceException")
+            self.warning("Catched and ignored: StaleElementReferenceException")
             pass
         letters = self.get_all_letters()
         assert 1 == len(letters), self.error("delete_all_letters_except_last didn't complete correctly. "

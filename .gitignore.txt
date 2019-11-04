@@ -1,2 +1,3 @@
 .idea/
 venv/
+tests/test_execution_files/gmail_tests.log

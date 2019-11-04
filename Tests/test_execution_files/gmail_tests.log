@@ -1,21 +1,20 @@
-INFO 2019-11-03 00:31:56,154 login 20 Login steps is completed successfully.
-INFO 2019-11-03 00:32:06,638 check_titile 28 'testforasferro' is present in the title.
-INFO 2019-11-03 00:32:09,413 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:12,036 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:14,164 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:16,769 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:18,964 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:20,586 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:22,678 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:24,933 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:26,911 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:29,167 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:31,473 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:33,601 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:36,486 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:38,796 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:40,538 send_letter 40 Letter sent successfully.
-ERROR 2019-11-03 00:32:41,828 get_text_from_letters 65 Catched and ignored: StaleElementReferenceException
-INFO 2019-11-03 00:32:42,901 get_text_from_letters 67 get_text_from_letters completed successfully
-INFO 2019-11-03 00:32:44,572 send_letter 40 Letter sent successfully.
-INFO 2019-11-03 00:32:46,937 delete_all_letters_except_last 84 delete_all_letters_except_last completed successfully
+INFO 2019-11-04 19:33:05,323 login 20 Login steps is completed successfully.
+INFO 2019-11-04 19:33:16,951 check_titile 27 'testforasferro' is present in the title.
+INFO 2019-11-04 19:33:18,552 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:20,801 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:22,533 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:24,710 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:26,599 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:28,214 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:29,825 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:33,773 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:37,858 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:39,849 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:41,499 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:43,158 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:45,269 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:47,467 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:49,642 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:51,486 get_text_from_letters 64 get_text_from_letters completed successfully
+INFO 2019-11-04 19:33:52,549 send_letter 37 Letter sent successfully.
+INFO 2019-11-04 19:33:54,377 delete_all_letters_except_last 81 delete_all_letters_except_last completed successfully
